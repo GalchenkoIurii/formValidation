@@ -3,8 +3,10 @@ let loginField = document.querySelector('input[name="login"]'),
     password2Field = document.querySelector('input[name="password2"]'),
     submit = document.querySelector('input[name="submit"]');
 
+// new RegExp("");
+const loginValidationRule = /[a-zа-яё]/gi;
+const passwordValidationRule = /[]/;
 
-console.log(loginField);
-console.log(passwordField);
-console.log(password2Field);
-console.log(submit);
+    let str = "abC7Dc@mD4арД";
+
+console.log(str.match(loginValidationRule));
