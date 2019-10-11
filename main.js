@@ -18,7 +18,7 @@ form.addEventListener('submit', function (event) {
     let loginValidationResult = loginValidation(loginString, loginValidationRule);
     let passwordValidationResult = passwordValidation(passwordString, password2String, passwordValidationRule);
 
-    
+
 });
 
 function loginValidation(validationString, validationRule) {
