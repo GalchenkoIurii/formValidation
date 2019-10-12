@@ -1,15 +1,17 @@
 let form = document.getElementById('custom-form'),
+    modal = document.getElementById('modal'),
+    close = document.getElementById('close'),
     loginField = document.querySelector('input[name="login"]'),
     passwordField = document.querySelector('input[name="password"]'),
     password2Field = document.querySelector('input[name="password2"]'),
-    submit = document.querySelector('button[name="submit"]'),
+    submit = document.querySelector('input[name="submit"]'),
     loginString, passwordString, password2String, loginValidationMessage, passwordValidationMessage;
 
 // new RegExp("");
 const loginValidationRule = /[a-z]/gi;
 const passwordValidationRule = [/[0-9]/, /[a-z]/, /[A-Z]/];
 
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', function(event) {
     event.preventDefault();
     loginString = loginField.value;
     passwordString = passwordField.value;
@@ -18,7 +20,13 @@ form.addEventListener('submit', function (event) {
     let loginValidationResult = loginValidation(loginString, loginValidationRule);
     let passwordValidationResult = passwordValidation(passwordString, password2String, passwordValidationRule);
 
+    
 
+    modal.style.display = "block";
+});
+
+close.addEventListener('click', function() {
+    modal.style.display = "none";
 });
 
 function loginValidation(validationString, validationRule) {
